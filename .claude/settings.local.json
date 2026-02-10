@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app:*)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --yes --force)",
+      "Bash(xcopy /E /H /Y /EXCLUDE:\"E:\\\\Sajtovi\\\\profi-cisto-temp\\\\excludelist.txt\" \"profi-cisto-temp\\\\*\" \"profi-cisto\"\" 2>&1 | head -5 && echo \"Done \")",
+      "Bash(powershell:*)",
+      "Bash(cmd /c:*)",
+      "Bash(npm run build:*)",
+      "WebFetch(domain:manikamwebsolutions.com)"
+    ]
+  }
+}

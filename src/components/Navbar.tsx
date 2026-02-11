@@ -3,10 +3,19 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -29,20 +38,18 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div
-            className={`w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 ring-2 transition-all duration-300 ${
-              scrolled ? "ring-blue-100" : "ring-white/30"
-            }`}
-          >
-            <Image
-              src="/logo.png"
-              width={40}
-              height={40}
-              alt="Profi Čisto logo"
-              className="w-full h-full object-cover"
-            />
-          </div>
+        <Link
+          href="/"
+          onClick={handleLogoClick}
+          className="flex items-center gap-2 group"
+        >
+          <Image
+            src="/logo.png"
+            width={60}
+            height={60}
+            alt="Profi Čisto logo"
+            className=" object-cover"
+          />
 
           <span
             className={`font-bold text-xl tracking-tight transition-colors ${

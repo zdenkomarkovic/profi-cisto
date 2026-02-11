@@ -89,7 +89,7 @@ export default function About() {
             <div className="grid grid-cols-2 gap-3">
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
                 <Image
-                  src="/images/ciscenje (7).jpg"
+                  src="/images/tepih.jpg"
                   alt="Mašinska oprema za čišćenje"
                   fill
                   className="object-cover"
